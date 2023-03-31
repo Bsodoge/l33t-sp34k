@@ -16,8 +16,12 @@
             "js": ["contentScript.js"]
         }
     ],
+    "permissions": [
+        "tabs"
+    ]
     "action": {
         "browser_style": true,
-        "default_title": "l33t sp34k"
+        "default_title": "l33t sp34k",
+        "default_popup": "popup.html"
     }  
 }
