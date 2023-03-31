@@ -8,5 +8,6 @@ function toggleExtension(tabs){
     } else{
         buttonToggle.innerText = "Deactivate";
     }
+    isToggled = !isToggled;
     browser.tabs.sendMessage(tabs[0].id, isToggled);
 }
