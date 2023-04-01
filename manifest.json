@@ -17,8 +17,9 @@
         }
     ],
     "permissions": [
-        "tabs"
-    ]
+        "tabs",
+        "storage"
+    ],
     "action": {
         "browser_style": true,
         "default_title": "l33t sp34k",
