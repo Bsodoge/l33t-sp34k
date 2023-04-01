@@ -84,3 +84,4 @@ const getSettings = (message) => {
 }
 
 browser.runtime.onMessage.addListener(getSettings);
+applySettings();
