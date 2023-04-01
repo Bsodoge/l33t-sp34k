@@ -1,5 +1,7 @@
 let inputs = document.querySelectorAll('input');
 let l33tType = {};
+let isToggled = false;
+let isIntermediate = false;
 let intermediateL33t =  {
     'b' : 'I3',
     'c' : '[',
@@ -14,7 +16,7 @@ let intermediateL33t =  {
     'n' : '|\\|',
     'p' : '|>',
     'q' : '0_',
-    'r' : 'I2',
+    'r' : '|2',
     's' : '5',
     't' : '7',
     'v' : '\\/',
@@ -40,7 +42,7 @@ let basicL33t = {
 
 const determineL33tType = (option) => {
     switch(option){
-        case 'intermediate':
+        case true:
             l33tType = intermediateL33t;
         break;
         default:
@@ -50,7 +52,7 @@ const determineL33tType = (option) => {
 }
 const l33tConverter = (val) => {
     let content = val.target.value.toLowerCase();
-    determineL33tType('');
+    determineL33tType(isIntermediate);
     if(!content || /^ *$/.test(content)) return;
     let newString = '';
     for(let i = 0; i < content.length; i++){
@@ -61,6 +63,24 @@ const l33tConverter = (val) => {
     val.target.value = newString;
 }
 
-inputs.forEach(x => {
-    x.addEventListener('input', l33tConverter)
-});
+const applySettings = () => {
+    if(isToggled){
+        inputs.forEach(x => {
+            x.addEventListener('input', l33tConverter);
+        });
+    } else{
+        inputs.forEach(x => {
+            x.removeEventListener('input', l33tConverter);
+        });
+    }
+}
+
+
+const getSettings = (message) => {
+    isToggled = message.isToggled;
+    isIntermediate = message.isIntermediate;
+    console.log(message);
+    applySettings();
+}
+
+browser.runtime.onMessage.addListener(getSettings);
