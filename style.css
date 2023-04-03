@@ -1,0 +1,15 @@
+body{
+    font-family: 'runescape_uf', sans-serif;
+    padding: 0 20px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+.container{
+    display: flex;
+    gap: 8px;
+}
+.title{
+    color: green;
+}
