@@ -14,10 +14,12 @@ checkBox.addEventListener('click', () => {
 const changeButtonText = () => {
     if(!isToggled){
         buttonToggle.innerText = "Activate";
-        title.classList.remove('activate');
+        title.classList.remove('titleActivate');
+        buttonToggle.classList.remove('buttonActivate');
     } else{
         buttonToggle.innerText = "Deactivate";
-        title.classList.add('activate');
+        title.classList.add('titleActivate');
+        buttonToggle.classList.add('buttonActivate')
     }
 }
 const setSettings = () => {
