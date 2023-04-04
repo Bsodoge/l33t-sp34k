@@ -1,15 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
 body{
     font-family: 'Roboto Mono', monospace;
-    padding: 0 20px 0 20px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: black;
+    gap: 8px;
 }
 .container{
     display: flex;
     gap: 8px;
 }
 .title{
-    color: green;
+    color: red;
+    transition: all 500ms linear;
+}
+.option{
+    color: #fff;
+}
+.button{
+    all: unset;
+    cursor: pointer;
+    padding: 0.25rem 1rem;
+    background-color: red;
+    color: white;
+}
+.titleActivate{
+    color: #22ee22;
+    text-shadow: 0 0 1rem #22ee22;
+    transition: all 500ms linear;
+}
+.buttonActivate{
+    background-color: green;
 }
