@@ -1,5 +1,6 @@
 let buttonToggle = document.getElementById('toggle');
 let checkBox = document.getElementById('checkbox');
+let title = document.getElementById('title');
 let isToggled = false;
 let settings = {
     isToggled : isToggled,
@@ -13,8 +14,10 @@ checkBox.addEventListener('click', () => {
 const changeButtonText = () => {
     if(!isToggled){
         buttonToggle.innerText = "Activate";
+        title.classList.remove('activate');
     } else{
         buttonToggle.innerText = "Deactivate";
+        title.classList.add('activate');
     }
 }
 const setSettings = () => {
