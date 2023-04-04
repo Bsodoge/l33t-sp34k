@@ -35,8 +35,9 @@ const onOpen = () => {
         isToggled = storageSettings.isToggled;
         changeButtonText();
         settings = storageSettings;
+        browser.tabs.query({active:true,currentWindow:true},sendMessage);
     });
-    browser.tabs.query({active:true,currentWindow:true},sendMessage)
+    
 }
 const sendMessage = (tabs) => {
     browser.tabs.sendMessage(tabs[0].id, settings);
