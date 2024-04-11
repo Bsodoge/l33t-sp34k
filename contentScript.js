@@ -1,4 +1,4 @@
-let inputs = document.querySelectorAll('input');
+let inputs = document.querySelectorAll('input, textarea');
 let l33tType = {};
 let isToggled = false;
 let isIntermediate = false;
